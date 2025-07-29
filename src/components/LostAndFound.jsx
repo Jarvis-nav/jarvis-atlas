@@ -3,7 +3,7 @@ import lostItemsData from '../data/LostItems.json'
 import './LostAndFound.css'
 
 // Import local images
-import headphonesImg from '../assets/images/headphones.png'
+import headphonesImg from '../assets/images/Headphones.png'
 import bottleImg from '../assets/images/blue_bottle.png'
 import hoodieImg from '../assets/images/grey_hoodi.png'
 import defaultImg from '../assets/images/lost-item.png'
