@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import lostItemsData from '../data/lostItems.json'
+import lostItemsData from '../data/LostItems.json'
 import './LostAndFound.css'
 
 // Import local images
