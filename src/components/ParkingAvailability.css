@@ -1,0 +1,188 @@
+/* Root styling */
+:root {
+  --primary: #2563eb;
+  --available: #22c55e;
+  --occupied: #ef4444;
+  --reserved: #facc15;
+  --ev-border: #0ea5e9;
+  --bg-gradient: linear-gradient(145deg, #e0f2fe, #f0faff);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --blur: blur(10px);
+  --radius: 1.2rem;
+}
+
+/* Main container */
+.parking-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: #111;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.updated-time {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Floor Card */
+.floor-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  margin: 1.2rem 0;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floor-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.floor-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.floor-header h3 {
+  font-size: 1.4rem;
+  color: #1f2937;
+}
+
+.availability-badge {
+  font-weight: 600;
+  color: var(--available);
+  font-size: 0.95rem;
+}
+
+.vehicle-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.vehicle-tag {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: 999px;
+  text-transform: uppercase;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.vehicle-tag.car { background: #dcfce7; color: #065f46; }
+.vehicle-tag.bike { background: #fef9c3; color: #92400e; }
+.vehicle-tag.ev { background: #cffafe; color: #0e7490; }
+
+/* Zone Layout */
+.zone-section {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.zone-card {
+  background: #f0f9ff;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  border: 1px solid #dbeafe;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.zone-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.zone-card p {
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+/* Slots Layout */
+.slots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
+  justify-content: start;
+}
+
+.slot {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Color logic */
+.slot.available {
+  background: var(--available);
+}
+
+.slot.occupied {
+  background: var(--occupied);
+}
+
+.slot.reserved {
+  background: var(--reserved);
+  color: #000;
+}
+
+.slot.ev {
+  border: 2px solid var(--ev-border);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .parking-container {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .floor-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .slots-grid {
+    justify-content: center;
+  }
+}

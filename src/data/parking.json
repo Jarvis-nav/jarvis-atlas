@@ -1,0 +1,64 @@
+{
+  "parkingLotName": "Main Office Parking",
+  "totalFloors": 4,
+  "lastUpdated": "2025-07-28T10:45:00Z",
+  "floors": [
+    {
+      "floorId": "B1",
+      "floorName": "Basement 1",
+      "totalSlots": 50,
+      "availableSlots": 12,
+      "vehicleTypesAllowed": ["car", "bike"],
+      "zones": [
+        {
+          "zoneId": "B1-Z1",
+          "zoneName": "Zone A",
+          "totalSlots": 25,
+          "availableSlots": 5,
+          "slots": [
+            {
+              "slotId": "B1-Z1-S01",
+              "isAvailable": true,
+              "vehicleType": "car",
+              "isEVCompatible": false,
+              "isReserved": false,
+              "lastOccupied": "2025-07-28T08:20:00Z"
+            },
+            {
+              "slotId": "B1-Z1-S02",
+              "isAvailable": false,
+              "vehicleType": "car",
+              "isEVCompatible": true,
+              "isReserved": true,
+              "lastOccupied": "2025-07-28T10:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "floorId": "B2",
+      "floorName": "Basement 2",
+      "totalSlots": 40,
+      "availableSlots": 30,
+      "vehicleTypesAllowed": ["car", "bike", "ev"],
+      "zones": []
+    },
+    {
+      "floorId": "B3",
+      "floorName": "Basement 3",
+      "totalSlots": 30,
+      "availableSlots": 20,
+      "vehicleTypesAllowed": ["car"],
+      "zones": []
+    },
+    {
+      "floorId": "B4",
+      "floorName": "Basement 4",
+      "totalSlots": 20,
+      "availableSlots": 5,
+      "vehicleTypesAllowed": ["bike"],
+      "zones": []
+    }
+  ]
+}

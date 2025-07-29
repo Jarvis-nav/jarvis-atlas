@@ -1,0 +1,138 @@
+:root {
+  --trust-green: #00b097;
+  --trust-green-tint: #73c6ba;
+  --care-yellow: #ffb000;
+  --empathy-purple: #d3bdf2;
+  --empathy-purple-tint: #e6d9f8;
+  --courage-coral: #ff6b6b;
+  --courage-coral-tint: #ff9f9f;
+
+  --white: #ffffff;
+
+  --card-radius: 1.2rem;
+  --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  --hover-scale: 1.08;
+  --transition-fast: 0.3s ease;
+}
+
+.home-container {
+  /* background: linear-gradient(to bottom, var(--trust-green-tint), var(--empathy-purple-tint)); */
+  background:#73c6ba;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--white);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--trust-green);
+  padding: 1rem 1.5rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+  transition: background 0.3s;
+}
+
+.logo {
+  height: 38px;
+  width: auto;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--white);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.grid-item {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--card-radius);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background 0.3s;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-item:hover {
+  transform: scale(var(--hover-scale));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  background-color: var(--trust-green);
+}
+
+/* Highlighted Primary Navigation Card */
+.grid-item.primary-nav {
+  border: nones;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Icons */
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  display: block;
+  color: var(--care-yellow);
+}
+
+/* Label Text - updated to black */
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .icon {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .grid-item {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,21 @@
+.map-view-wrapper {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.map-view-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.zone-marker {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: pulse 1.3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}

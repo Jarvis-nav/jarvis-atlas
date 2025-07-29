@@ -1,0 +1,73 @@
+:root {
+  --primary: #00b097;
+  --bg-tint: #73c6ba;
+  --glass: rgba(255, 255, 255, 0.85);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --radius: 1rem;
+  --text-dark: #1f2937;
+  --text-subtle: #475569;
+}
+
+.announcements-container {
+  background: var(--bg-tint);
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-dark);
+}
+
+.announcements-container h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.announcements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.announcement-card {
+  background: var(--glass);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-4px);
+}
+
+.announcement-card h4 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.announcement-card p {
+  font-size: 0.95rem;
+  color: var(--text-subtle);
+  margin-bottom: 0.6rem;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #64748b;
+  display: block;
+  text-align: right;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .announcements-container {
+    padding: 1rem;
+  }
+
+  .announcement-card {
+    padding: 1.2rem;
+  }
+}

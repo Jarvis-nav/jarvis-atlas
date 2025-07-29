@@ -1,0 +1,22 @@
+.tour-card {
+  text-align: center;
+}
+
+.tour-img {
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: 12px;
+}
+
+.arrow-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.arrow-buttons button {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+}

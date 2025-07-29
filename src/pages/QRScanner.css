@@ -1,0 +1,27 @@
+.qr-container {
+  padding: 1rem;
+}
+
+.map-container {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.floor-map {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.highlight-zone {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  font-size: 1.5rem;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}

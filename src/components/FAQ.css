@@ -1,0 +1,22 @@
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  cursor: pointer;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.faq-answer {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}

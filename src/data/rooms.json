@@ -1,0 +1,62 @@
+{
+  "floors": [
+    {
+      "floorId": "F1",
+      "floorName": "First Floor",
+      "meetingRooms": [
+        {
+          "roomId": "R101",
+          "roomName": "Conference Alpha",
+          "capacity": 10,
+          "amenities": ["Projector", "Whiteboard", "Speakerphone", "WiFi"],
+          "location": "Near Reception",
+          "availabilityStatus": "available",
+          "bookings": [
+            {
+              "bookingId": "B001",
+              "bookedBy": "john.doe@example.com",
+              "startTime": "2025-07-28T10:00:00",
+              "endTime": "2025-07-28T11:00:00",
+              "purpose": "Team Sync",
+              "attendees": ["alice@example.com", "bob@example.com"],
+              "bookingStatus": "confirmed"
+            },
+            {
+              "bookingId": "B002",
+              "bookedBy": "admin@example.com",
+              "startTime": "2025-07-28T14:00:00",
+              "endTime": "2025-07-28T15:00:00",
+              "purpose": "Client Call",
+              "attendees": ["client@example.com"],
+              "bookingStatus": "cancelled"
+            }
+          ]
+        },
+        {
+          "roomId": "R102",
+          "roomName": "Brainstorm Room",
+          "capacity": 6,
+          "amenities": ["Smart TV", "Whiteboard"],
+          "location": "Near Pantry",
+          "availabilityStatus": "unavailable",
+          "bookings": []
+        }
+      ]
+    },
+    {
+      "floorId": "F2",
+      "floorName": "Second Floor",
+      "meetingRooms": [
+        {
+          "roomId": "R201",
+          "roomName": "Focus Den",
+          "capacity": 4,
+          "amenities": ["Monitor", "Conference Camera"],
+          "location": "Next to Elevator",
+          "availabilityStatus": "available",
+          "bookings": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+/* src/components/QRScanner.css */
+
+/* keep layout but hide the actual camera and canvas */
+.qr-reader-container video,
+.qr-reader-container canvas {
+  visibility: hidden !important;
+  /* or if you prefer: opacity: 0 !important; */
+}
+
+/* still fill with black */
+.qr-reader-container {
+  background-color: black;
+}

@@ -1,0 +1,161 @@
+:root {
+  --primary: #00b097;
+  --bg-tint: #73c6ba; /* Correct green background */
+  --glass: rgba(255, 255, 255, 0.85);
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  --radius: 1.2rem;
+  --text-dark: #1f2937;
+  --text-subtle: #475569;
+  --form-bg: #f1f5f9;
+}
+
+.container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-tint);
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+/* Form Styling */
+.lost-form {
+  background: var(--glass);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.lost-form h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.lost-form input,
+.lost-form textarea,
+.lost-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.8rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--form-bg);
+  font-size: 0.95rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.lost-form textarea {
+  resize: vertical;
+}
+
+.lost-form button {
+  margin-top: 0.6rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.lost-form button:hover {
+  background: #01927f;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.filters select,
+.filters input[type="date"] {
+  padding: 0.65rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--glass);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  box-shadow: var(--shadow);
+}
+
+/* Found Items */
+.found-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.found-card {
+  background: var(--glass);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+.found-card:hover {
+  transform: scale(1.02);
+}
+
+.found-card img {
+  width: 100%;
+  height: 180px;
+  object-fit:contain;
+  border-radius: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.found-card h4 {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.found-card p {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  margin-bottom: 0.3rem;
+}
+
+.found-card p strong {
+  color: var(--text-dark);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .lost-form {
+    padding: 1.2rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .found-card img {
+    height: 160px;
+  }
+}
