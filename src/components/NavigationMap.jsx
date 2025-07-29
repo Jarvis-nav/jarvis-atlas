@@ -29,7 +29,6 @@ const SvgNavigator = () => {
     if (sourceZone && destinationZone) {
       setTimeout(() => {
         const svgDoc = svgRef.current?.contentDocument;
-        console.log(svgRef)
         if (!svgDoc) return;
 
         svgDoc.querySelectorAll('.highlight-blink').forEach(el =>
@@ -37,7 +36,7 @@ const SvgNavigator = () => {
         );
 
         const sourceEl = svgDoc.getElementById(sourceZone);
-        const destEl = svgDoc.getElementById(destinationZone);
+        const destEl   = svgDoc.getElementById(destinationZone);
 
         if (sourceEl) {
           sourceEl.classList.add('highlight-blink');
@@ -47,14 +46,11 @@ const SvgNavigator = () => {
           destEl.classList.add('highlight-blink');
           destEl.dispatchEvent(new MouseEvent('click', { bubbles: true }));
         }
-
       }, 100);
     }
   }, [sourceZone, destinationZone]);
 
-  const highlightSVG = (id) => {
-    console.log(id);
-  };
+  const highlightSVG = (id) => { /* still a stub */ };
 
   const zoomToElements = (id1, id2) => {
     const svgDoc = svgRef.current?.contentDocument;
@@ -62,26 +58,20 @@ const SvgNavigator = () => {
     const el1 = svgDoc.getElementById(id1);
     const el2 = svgDoc.getElementById(id2);
     if (!el1 || !el2) return;
-    const b1 = el1.getBBox();
-    const b2 = el2.getBBox();
-    const minX = Math.min(b1.x, b2.x);
-    const minY = Math.min(b1.y, b2.y);
+    const b1 = el1.getBBox(), b2 = el2.getBBox();
+    const minX = Math.min(b1.x, b2.x), minY = Math.min(b1.y, b2.y);
     const maxX = Math.max(b1.x + b1.width, b2.x + b2.width);
     const maxY = Math.max(b1.y + b1.height, b2.y + b2.height);
     const pad = 100;
     setViewBox(
-      `${minX - pad} ${minY - pad} ${(maxX - minX) + pad * 2} ${ (maxY - minY) + pad * 2}`
+      `${minX - pad} ${minY - pad} ${(maxX - minX) + pad*2} ${(maxY - minY) + pad*2}`
     );
   };
 
   const handleQRDetected = (qr) => {
-    // normalize dashed-lowercase or uppercase input into your dropdown values
-    console.log(qr)
     const normalized = qr.replace(/-/g, '_').toUpperCase();
     const found = options.find(z => z.value === normalized);
     if (found) {
-      console.log(found);
-      
       setSourceZone(found.value);
       highlightSVG(found.value);
     } else {
@@ -100,8 +90,8 @@ const SvgNavigator = () => {
 
   return (
     <div className="svg-navigator-container">
-      <h2 style={{color:`black`}}>5th Floor Map</h2>
-      {/* scanner until we have a source OR user hits manual */}
+      <h2 style={{ color: 'black' }}>5th Floor Map</h2>
+
       {!sourceZone && !manualMode ? (
         <QRScanner
           onDetected={handleQRDetected}
@@ -110,7 +100,6 @@ const SvgNavigator = () => {
         />
       ) : (
         <div className="dropdowns">
-          {/* Source dropdown always visible once scanner hides */}
           <div className="dropdown-group">
             <label>Source Zone</label>
             <select
@@ -130,8 +119,6 @@ const SvgNavigator = () => {
                 ))}
             </select>
           </div>
-
-          {/* Destination dropdown */}
           <div className="dropdown-group">
             <label>Your Destination</label>
             <select
@@ -154,17 +141,18 @@ const SvgNavigator = () => {
         </div>
       )}
 
-      {/* SVG map */}
-      <object
-        ref={svgRef}
-        type="image/svg+xml"
-        data="/fifth_floor.svg"
-        className="svg-map"
-        aria-label="Interactive Office Map"
-        style={{ transition: 'all 0.4s ease-in-out' }}
-      >
-        Your browser does not support SVG
-      </object>
+      <div className="svg-wrapper">
+        <object
+          ref={svgRef}
+          type="image/svg+xml"
+          data="/fifth_floor.svg"
+          className="svg-map"
+          aria-label="Interactive Office Map"
+          onLoad={() => setSvgLoaded(true)}
+        >
+          Your browser does not support SVG
+        </object>
+      </div>
     </div>
   );
 };

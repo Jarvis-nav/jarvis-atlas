@@ -2,7 +2,7 @@
   "floors": [
     {
       "floorId": "F1",
-      "floorName": "First Floor",
+      "floorName": "5th Floor",
       "meetingRooms": [
         {
           "roomId": "R101",
@@ -45,7 +45,7 @@
     },
     {
       "floorId": "F2",
-      "floorName": "Second Floor",
+      "floorName": "6th Floor",
       "meetingRooms": [
         {
           "roomId": "R201",
