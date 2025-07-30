@@ -93,10 +93,13 @@ const SvgNavigator = () => {
   return (
     <div className="svg-navigator-container">
       <h2 style={{ color: 'black' }}>5th Floor Map</h2>
+      <div>
+
       <button style={{textTransform:'uppercase',backgroundColor:'#bfffcf',color:'#000',marginBottom:10,fontWeight:'600'}}
       onClick={()=>{
         setQrVisible(!qrVisible);
       }}>Click to scan the qr</button>
+      </div>
       { qrVisible ? (
         <QRScanner
           onDetected={handleQRDetected}
