@@ -24,6 +24,7 @@ const SvgNavigator = () => {
   const [destinationZone, setDestination] = useState('');
   const [manualMode, setManualMode]       = useState(false);
   const [viewBox, setViewBox]             = useState('0 0 1600 900');
+  const [qrVisible,setQrVisible] = useState(false);
 
   useEffect(() => {
     if (sourceZone && destinationZone) {
@@ -74,6 +75,7 @@ const SvgNavigator = () => {
     if (found) {
       setSourceZone(found.value);
       highlightSVG(found.value);
+      setQrVisible(!qrVisible);
     } else {
       alert(`❌ QR code value '${qr}' does not match any known zone.`);
       setManualMode(true);
@@ -91,12 +93,14 @@ const SvgNavigator = () => {
   return (
     <div className="svg-navigator-container">
       <h2 style={{ color: 'black' }}>5th Floor Map</h2>
-
-      {!sourceZone && !manualMode ? (
+      <button style={{textTransform:'uppercase',backgroundColor:'#bfffcf',color:'#000',marginBottom:10,fontWeight:'600'}}
+      onClick={()=>{
+        setQrVisible(!qrVisible);
+      }}>Click to scan the qr</button>
+      { qrVisible ? (
         <QRScanner
           onDetected={handleQRDetected}
           onManualSelectTrigger={() => setManualMode(true)}
-          disableScanner={!!sourceZone || manualMode}
         />
       ) : (
         <div className="dropdowns">
