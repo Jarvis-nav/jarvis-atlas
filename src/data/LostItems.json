@@ -5,7 +5,7 @@
     "location": "Zone A",
     "date": "2025-07-09",
     "description": "Left on a desk near conference room.",
-    "image": "headphones.png"
+    "image": "src/assets/images/headphones.png"
   },
   {
     "name": "Blue Water Bottle",
@@ -13,7 +13,7 @@
     "location": "Zone B",
     "date": "2025-07-08",
     "description": "Found near the pantry area.",
-    "image": "blue_bottle.png"
+    "image": "src/assets/images/blue_bottle.png"
   },
   {
     "name": "Grey Hoodie",
@@ -21,6 +21,6 @@
     "location": "Zone C",
     "date": "2025-07-10",
     "description": "Hanging on chair in open desk zone.",
-    "image": "grey_hoodie.png"
+    "image": "src/assets/images/grey_hoodi.png"
   }
 ]

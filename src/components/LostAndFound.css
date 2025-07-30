@@ -140,6 +140,19 @@ h2 {
   color: var(--text-dark);
 }
 
+.preview-container {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.preview-image {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   .container {
@@ -157,5 +170,8 @@ h2 {
 
   .found-card img {
     height: 160px;
+  }
+  .card{
+    width: 100%;
   }
 }
